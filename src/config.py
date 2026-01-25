@@ -18,7 +18,7 @@ class Config:
     IMAGE_SIZE = 512
     BATCH_SIZE = 8
     LR = 1e-4
-    EPOCHS = 20
+    EPOCHS = 30
     
     CONTROLNET_ID = "lllyasviel/sd-controlnet-seg"
     SD_INPAINT_ID = "runwayml/stable-diffusion-inpainting"
