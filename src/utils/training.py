@@ -26,11 +26,11 @@ class Trainer:
         self.history = {'loss': [], 'iou': []}
         os.makedirs(config.CHECKPOINT_DIR, exist_ok=True)
 
-    def train_epoch(self, epoch, viz_fn=None):
+    def train_epoch(self, epoch,num_epochs, viz_fn=None):
         self.model.train()
         meters = {'loss': AverageMeter(), 'iou': AverageMeter()}
         
-        pbar = tqdm(self.loader, desc=f"Epoch {epoch}")
+        pbar = tqdm(self.loader, desc=f"Epoch {epoch}/{num_epochs}")
         for idx, (img, mask, text) in enumerate(pbar):
             img, mask = img.to(self.cfg.DEVICE), mask.to(self.cfg.DEVICE)
             self.optim.zero_grad()
