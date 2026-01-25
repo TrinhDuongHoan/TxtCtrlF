@@ -47,4 +47,4 @@ class Trainer:
             if viz_fn and idx % 50 == 0: viz_fn(visualize_batch(img, mask, pred, epoch, idx))
             
         self.history['loss'].append(meters['loss'].avg)
-        torch.save(self.model.state_dict(), os.path.join(self.cfg.CHECKPOINT_DIR, f"txtctrlf_seg_ep{epoch}.pth"))
+        torch.save(self.model.state_dict(), os.path.join(self.cfg.CHECKPOINT_DIR, "txtctrlf_best.pth"))
